@@ -1,0 +1,41 @@
+/**
+ * CONTENTS
+ *
+ * MAIN
+ * main.scss...............................Includes all the sccs file imports. All imports
+ *                                         are compiled as one css file and gets created in dist folder
+ *
+ * FUNCTIONS (partial scss file)
+ * _functions.scss.........................Contains functions for performing calculations
+ *
+ * HELPERS
+ * variables.scss..........................Variable file for holding multiple css attribute
+ *                                         values like color code etc.
+ * _common.scss............................Contains all general style selectors with tag and class selectors
+ * _mixin.scss.............................Includes mixins for inserting common styles. Parameters can be passed to
+ *                                         make it more dynamic
+ *
+ * PAGE FILES
+ * header.scss.............................Header scss file which contains brand-image,
+ *                                         navbar styles, searchbox, notification dropdown and login button
+ * banner-section.scss.....................Banner/Main feature scss file which contains feature image,
+ *                                         headline and a search filter for searching apartments
+ * apartment-type.scss.....................Apartment type scss file which lets you choose the apartment type
+ * featured-apartment-section.scss.........Featured apartment scss file which contains the carousel for
+ *                                         the most featured/liked apartments.
+ * plans-and-dream-section.scss............Featured apartment scss file which contains the carousel for
+ *                                         the most featured/liked apartments.
+ * footer.scss.............................Styles for footer content, including brand-image,
+ *                                         social icons, site links.
+ */
+
+@import 'functions';
+@import 'variables';
+@import 'common';
+@import 'mixin';
+@import 'header';
+@import 'banner-section';
+@import 'apartment-type';
+@import 'featured-apartment';
+@import 'plans-and-dream-section';
+@import 'footer';

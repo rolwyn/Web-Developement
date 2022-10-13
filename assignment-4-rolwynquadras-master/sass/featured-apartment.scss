@@ -1,0 +1,146 @@
+/* FEATURED APARTMENT CAROUSEL
+ * Contains panel cards for displaying the most featured apartments.
+ * Three cards per slide
+ */
+
+//  Featured apartment content body
+ .featured_apt_wrapper {
+    //  grid layout for cards
+	.section_content {
+		padding: 40px 0;
+        @include grid-mixin(10px, center, 1fr 1fr 1fr); //$grid-gap, $justify-item, $template-columns
+	}
+}
+// Card wrapper layout
+.featured_apt_wrapper .apartment_card {
+    margin: 0;
+    max-width: 75%;
+    padding: 20px;
+    text-align: center;
+    min-height: 400px;
+    border-radius: 20px;
+    box-sizing: content-box;
+    box-shadow: 0 0 10px 2px $color-white-shade-2;
+    // Card image style
+    .card_figure {
+        position: relative;
+        .__selltype span {
+            &:first-child {
+                /* distance - will come on top of the card image. 
+                 * It is a floating info on the left side of image
+                */
+                @extend %floating-info;
+                left: 10px;
+                top: 10px;
+                padding: 5px;
+                font-weight: bold;
+                background: $sell-type-grey;
+                border-radius: 10px;
+            }
+            &:last-child {
+                /* selling type - will come on top of the card image. 
+                 * It is a floating info on the right side of image
+                 */
+                @extend %floating-info;
+                right: 8px;
+                top: 6px;
+                font-weight: 500;
+                background: #78c720;
+                padding: 6px 15px;
+                border-radius: 2px;
+            }
+        }
+        // The figure element of the card
+        .card_image {
+            width: 100%;
+            height: 200px;
+            object-fit: fill;
+        }
+        // figure caption of the card
+        figcaption {
+            margin: 5px 0;
+            font-size: fontSize(small, s12);
+            font-weight: 500;
+            color: $apt-card-p-text;
+            text-align: left;
+            i {
+                color: $md-icon-red;
+                font-size: fontSize(small, s14);
+            }
+        }
+    }
+    /* Apartment card description style with price, 
+     * apartment name, desc, size details 
+     */
+    .card_description {
+        // Apartment price info
+        .apartment_price {
+            margin: 10px 0;
+            color: $md-price-tag-blue;
+            font-size: fontSize(medium, m17);
+        }
+        // Apartment name info
+        >h4 {
+            color: $color-black-shade-1;
+            margin: 8px 0;
+        }
+        // Apartment description
+        >p {
+            font-size: fontSize(small, s11);
+            font-weight: 500;
+            color: $apt-card-p-text;
+            height: 35px;
+        }
+        // Apartment room dimensions details
+        .__inner {
+            @include flex-mixin(row, space-between, unset);
+        }
+        // container room size, beds and bath number details
+        .__inner .room_size_wrapper {
+            width: 55%;
+            font-size: fontSize(small, s11);
+            padding: 10px;
+            background: $color-white-shade-3;
+            @include flex-mixin(row, space-between, unset);
+            span {
+                color: $apt-card-p-text ;
+                font-weight: 500;
+            }
+            div {
+                margin-right: 5px;
+            }
+            // number of beds or bath or size
+            .__text {
+                color: $md-btn-primary-blue;
+                font-weight: bold;
+                // number of beds or bath or size symbol color
+                i {
+                    color: #606060;
+                }
+            }
+        }
+        // apartment card action button - expand/add/like
+        .room_action_wrapper {
+            text-align: right;
+            @include flex-mixin(row, flex-end, center);
+            div {
+                margin-right: 10px;
+            }
+            >a {
+                padding: 3px 7px;
+                color: $color-black-shade-2;
+                background: $color-white-shade-4;
+                border-radius: 5px;
+                margin-right: 5px;
+                // make second child (heart icon orange shade in color)
+                &:nth-child(2) {
+                    background: $color-orange-shade-1;
+                    color: $color-white-shade-1;
+                }
+                >i {
+                    font-size: fontSize(small, s14);
+                }
+            }
+        }
+    }
+}

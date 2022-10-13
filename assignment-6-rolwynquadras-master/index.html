@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_wrapper">
+            <!-- wrapper for todo container -->
+            <div class="todo-wrapper">
+                <div id="add-todo-item" class="add-todo-item">
+                    <header class="add-todo-header">
+                        <h2>What will you do today?</h2>
+                        <!-- close button for closing the add view -->
+                        <button type="button" id="close-btn" class="close-btn">X</button>
+                    </header>
+                    <!-- form for submitting the input values and creating a todo -->
+                    <form id="add-todo-form" class="add-todo-form" method="POST">
+                        <!-- title, description, due date and time input fields -->
+                        <fieldset class="column-fieldset">
+                            <label>Title</label>
+                            <input id="add-title" type="text" class="add-title _inputField" placeholder="Your task Sir?" required>
+                        </fieldset>
+                        <fieldset class="column-fieldset">
+                            <label>Description</label>
+                            <textarea id="add-description" name="story" class="_inputField" rows="3" cols="5"></textarea>
+                        </fieldset>
+                        <fieldset class="row-fieldset d-flex-row">
+                            <label>Due Date:
+                                <input id="add-due-date" type="date" name="duedate" class="_inputField" pattern="\d{4}-\d{2}-\d{2}" required>
+                            </label>
+                            <label>Time
+                                <input id="add-due-time" type="time" name="duetime" class="_inputField" required>
+                            </label>
+                        </fieldset>
+                        <!-- submit button for creating a todo -->
+                        <div class="btn-wrapper">
+                            <button id="create-todo" type="submit">Create</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- todo box for displaying all the fetched and the new todos -->
+                <div class="todo-box">
+                    <div class="todo-header">
+                        <p>Todo App</p>
+                        <div class="btn-wrapper">
+                            <button id="add-todo-btn" type="button">Add</button>
+                        </div>
+                    </div>
+                    <!-- overflow wrapper for scrolling if todo elements exceeds a certain height -->
+                    <div class="todo-overflow-wrapper">
+                        <!-- dynamically append li (todos) to the parent ul -->
+                        <ul id="todo-list-container" class="list-container">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

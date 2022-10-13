@@ -1,0 +1,96 @@
+/* Common style file for storing repeatedly used selectors.
+ * Also contains general styles for html, body and any elements that needs a common style.
+ * Imported in main.scss file
+ */
+
+ //html element style
+html {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: $font-family-open-sans;
+}
+
+//body element style
+body {
+    margin: 0px;
+    font-family: $font-family-open-sans;
+}
+
+//list styles for not displaying the bullets
+ul, li {
+    list-style: none;
+}
+
+//Figure tag margin 0
+figure {
+    margin: 0;
+}
+
+.btn_shade_blue {
+    border: transparent;
+    color: $color-white-shade-1;
+    border-color: $md-btn-primary-blue;
+    background-color: $md-btn-primary-blue;
+}
+
+.btn_shade_blue:hover {
+    border-color:$md-btn-primary-hover;
+    background-color: $md-btn-primary-hover;
+}
+
+//sets margin as
+.margin_tb_50 {
+    margin: 50px 0;
+}
+
+.mt_50 {
+    margin-top: 50px;
+}
+
+//sets padding bottom as 80px
+.pb_80 {
+    padding-bottom: 80px;
+}
+
+//Sets margin bottom as 80px
+.mb_80 {
+    margin-bottom: 80px;
+}
+
+//Sets margin bottom as 120px
+.mb_100 {
+    margin-bottom: 120px;
+}
+
+//Align text left
+.text_left {
+    text-align: left;
+}
+
+//Section auto margin style for wrapper
+.section_wrapper, .article_wrapper {
+    margin: 0 auto;
+    max-width: 1340px;
+}
+
+//Common style for a section header tag
+.section_header {
+    text-align: center;
+}
+
+.section_header h1, .section_header h2, .section_header h3, .section_header h4, .section_header h5, .section_header h6 {
+    color: $md-default-text-shade;
+    text-align: center;
+}
+
+//Style for section header subtitle
+.section_header .sub_title {
+    color: $label-txt-grey;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+//active class style
+.active {
+    color: $md-anchor-blue ;
+}

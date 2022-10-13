@@ -1,0 +1,187 @@
+/* APARTMENT PLANS SECTION STYLES (Studio, Deluxe Portion, Penthouse, Top Garden, Double Height)
+ * This sections contains styles for the different apartment plans
+ * with details of size of apartment in sq.ft and a floor plan.
+ */
+
+//Apartment plan container
+.apt_plan_container {
+    background: $color-white-shade-3;
+    padding: 50px 0;
+}
+
+.apt_plan_wrapper {
+    .section_header {
+        padding-bottom: 25px;
+    }
+    // Apartment plan list
+    .plan_list {
+        margin: 0 auto;
+        padding: 20px 0;
+        max-width: 760px;
+        @include flex-mixin(row, space-between, center);
+        li {
+            // Apartment list anchor hover style
+            a {
+                font-size: 15px;
+                font-weight: 500;
+                color: $md-default-text-shade;
+                text-decoration: none;
+                &:hover {
+                    color: $md-plan-list-blue;
+                    text-decoration: underline;
+                }
+                // active class after plan selected
+                &._active {
+                    color: $md-plan-list-blue;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    // Apartment plans section content
+    .section_content {
+        padding: 40px;
+        background: $color-white-shade-1;
+        border-radius: 20px;
+        box-shadow: 0 2px 6px 0px $box-sdw-section;
+        @include flex-mixin(row, space-between, unset);
+        // Plan description on the left side of the wrapper
+        .plan_description {
+            padding: 47px;
+            max-width: 35%;
+            border-radius: 10px;
+            background: $md-blue-h1;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            > h3 {
+                color: $color-white-shade-1;
+                font-size: 22px;
+                font-weight: 600;
+            }
+            > p {
+                color: $color-grey-shade-1;
+                font-size: 13px;
+                line-height: 2.2;
+            }
+            /* floor dimensions text */
+            .text_desc {
+                @include flex-mixin(column, unset, unset);
+            }
+            .text_desc .text_desc_inner {
+                padding: 15px 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                white-space: nowrap;
+                color: $color-white-shade-1;
+                font-size: 13px;
+                font-weight: 400;
+                letter-spacing: 0.2px;
+                justify-content: space-between;
+                span {
+                    white-space: nowrap;
+                }
+                .h_dashed_line {
+                    border: 0px;
+                    height: 0;
+                    padding: 0;
+                    height: 1px;
+                    display: block;
+                    margin: 0 20px;
+                    border-spacing: 1px;
+                    border-collapse: collapse;
+                    border-top: 1px dotted $color-white-shade-1;
+                    width: -webkit-fill-available;
+                }
+            }
+        }
+        // Floor plan on the right side of wrapper
+        .floor_plan_img {
+            padding: 60px;
+        }
+        //set image width of floor plan
+        img {
+            width: 460px;
+        }
+    }
+}
+
+/* BUYING A DREAM APARTMENT ARTICLE SECTION - Includes images and a
+ * button to see all apartments.
+ * This section is located above the footer element
+ */
+
+ // Set the postion relative so that images can be absolute to this element
+ .dream_apt_container {
+    position: relative;
+ }
+
+.dream_apt_wrapper {
+    padding: 200px 0;
+    .dream_apt_header {
+        h2 {
+            line-height: 2;
+            font-size: 35px;
+            color: $md-default-text-shade;
+            padding-bottom: 0;
+            // Highlight the "Prime Location" text with blue shade
+            span {
+                color: $md-icon-shade;
+            }
+        }
+        // Buy dream apartment text section header
+        button {
+            width: 230px;
+            font-size: 15px;
+            font-weight: 400;
+            padding: 20px 0;
+            cursor: pointer;
+            border-radius: 10px;
+            background: $md-blue-h1;
+            &:hover {
+                background: $md-submit-hover;
+            }
+        }
+    }
+    .dream_apt_images {
+        img {
+            // Dream apartment dotted images style
+            &:first-child {
+                position: absolute;
+                top: 46px;
+                right: 48%;
+                height: 270px;
+                width: 290px;
+            }
+            //main image - hero img style
+            &:last-child {
+                position: absolute;
+                right: 25px;
+                bottom: -52px;
+                width: 960px;
+                height: 730px;  
+            }
+        }
+    }
+    // Dream apartment video
+    .dream_apt_video {
+        position: absolute;
+        left: 30%;
+        bottom: 8%;
+        // Video icon
+        i {
+            position: absolute;
+            left: 40%;
+            top: 30%;
+            color: $md-icon-shade;
+            @include custom-fs(75px);
+        }
+        video {
+            width: 340px;
+            height: 220px;
+            cursor: pointer;
+            border-radius: 50px;
+            object-fit: cover;
+        }
+    }
+}

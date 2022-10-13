@@ -1,0 +1,278 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+// common body styles
+body {
+    padding: 0;
+    margin: 0;  
+    height: 100%;
+    // background: #4fc3f7;
+    background: $red-shade-2;
+}
+
+// remove default ul style
+ul {list-style: none;}
+
+// remove default fieldset style
+fieldset {margin: 0; border: none;}
+
+// Mark todo as done
+.linethrough {
+    text-decoration: line-through;
+}
+
+// main container - contains all the content inside it
+.container {
+    width: 100%;
+    height: 100%;
+    // wrapper class to center the todo app
+    .container_wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2% 10%;
+        min-height: 400px;
+    }
+    // Add todo item container which holds the input elements
+    .add-todo-item {
+        height: 0;
+        opacity: 0;
+        padding: 0 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        background: $color-white-shade-1;
+        transition: opacity 200ms ease-in-out;
+        transition: height 200ms ease-in-out;
+        box-shadow: 0 0 5px 0px $blue-shade-3;
+        border-radius: 10px;
+        // Fieldset for add todo input fields
+        fieldset {
+            label {
+                color: $color-grey-shade-4;
+                font-size: fontSize(small, s13);
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            // input field common style
+            input {
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                border-bottom: 1px solid $color-grey-shade-3;
+            }
+            // border style for description textarea
+            textarea {
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                border-bottom: 1px solid $color-grey-shade-3;
+            }
+            // style for when label and input are in a single row
+            &.row-fieldset {
+                label:first-child {
+                    padding-right: 30px;
+                }
+                input {
+                    margin-left: 10px;
+                    padding: 5px 10px;
+                }
+            }
+        }
+        // add button for todo
+        .btn-wrapper {
+            padding: 10px;
+            text-align: right;
+            button {
+                @extend %default-btn-style;
+                color: $color-white-shade-1;
+                background-color: $blue-shade-1 ;
+                border-color: $blue-shade-1 ;
+                vertical-align: middle;
+                &:hover {
+                    background: $blue-shade-2;
+                }
+            }
+        }
+        // title for add todo view container
+
+        .add-todo-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h2 {
+                padding: 0 5px;
+                color: $color-grey-shade-4;
+                font-size: fontSize(large, l24);
+                letter-spacing: 0.3px;
+            }
+            .close-btn {
+                width: 25px;
+                height: 25px;
+                font-size: fontSize(small, s15);
+                text-align: center;
+                border: none;
+                border-radius: 35px;
+                font-weight: bold;
+                color: #455a64;
+                cursor: pointer;
+                margin-right: 10px;
+                font-family: monospace;
+                background: $color-grey-shade-2;
+                vertical-align: middle;
+                color: $color-white-shade-1;
+            }
+        }
+        // add todo form layout
+        .add-todo-form {
+            @include flex-mixin(column, unset, unset);
+            fieldset {
+                @include flex-mixin(column, unset, unset);
+            }
+            .d-flex-row {
+                @include flex-mixin(row, unset, unset);
+            }
+            .d-flex-row label {
+                padding-right: 15px;
+            }
+        }
+        // show description when li element is clicked
+        &._shown {
+            opacity: 1;
+            height: auto;
+            transition: opacity 200ms ease-in-out;
+        }
+    }
+    // container for all the todo list
+    .todo-box {
+        padding: 0 10px;
+        border-radius: 10px;
+        background: $color-white-shade-1;
+        .todo-header {
+            padding: 10px 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $color-grey-shade-1;
+            // the todo title element
+            >p {
+                color: $color-grey-shade-4;
+                font-size: fontSize(large, l24);
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+             // add button for todo
+            .btn-wrapper {
+                padding: 10px;
+                text-align: right;
+                button {
+                    @extend %default-btn-style;
+                    color: $color-white-shade-1;
+                    background-color: $blue-shade-1;
+                    border-color: $blue-shade-1;
+                    vertical-align: middle;
+                    &:hover {
+                        background: $blue-shade-2;
+                    }
+                }
+            }
+        }
+        // handle overflow and add a scrollbar when list exceeds height
+        .todo-overflow-wrapper {
+            max-height: 400px;
+            overflow: auto;
+            height: 400px;
+        }
+        .list-container {
+            padding: 0;
+            // the todo list element
+            li {
+                padding: 10px;
+                background: $color-white-shade-1;
+                margin: 10px 10px;
+                border: 1px solid $blue-shade-3;
+                height: auto;
+                line-height: 1.5;
+                overflow: hidden;
+                border-radius: 10px;
+                background: $peach-shade-1;
+                // when todo status is complete show green border
+                &._statusComplete {
+                    border: 2px solid $green-shade-3;
+                }
+                p {
+                    margin: 0;
+                    font-size: 1.20rem;
+                    pointer-events: none;
+                    width: 50%;
+                    padding-right: 5px;
+                    word-break: break-word;
+                }
+                /*
+                 * list description, hide initially and show when 
+                 * _showDesc class is present
+                */
+                .todo-list-desc{
+                    opacity: 0;
+                    height: 0;
+                    padding: 0;
+                    &._showDesc {
+                        opacity: 1;
+                        height: auto;
+                        padding: 10px 0;
+                        text-align: justify;
+                        word-break: break-word;
+                        transition: opacity 200ms ease-in-out;
+                    }
+                }
+            }
+            li .list-item-inner {
+                @include flex-mixin(row, space-between, unset);
+                pointer-events: none;
+                // mark todo complete button styles
+                .mark-complete {
+                    pointer-events: all;
+                    color: $color-white-shade-1;
+                    background-color: $green-shade-1;
+                    border-color: $green-shade-1;
+                    vertical-align: middle;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-size: fontSize(small, s12);
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $green-shade-2;
+                    }
+                    &._pending {
+                        background-color: $red-shade-1;
+                        border-color: $red-shade-1;
+                        &:hover {
+                            background-color: $red-shade-3;
+                        }
+                    }
+                }
+                // action elements on the right side of the todo li element
+                .action-btn-container {
+                    // width: 40%;
+                    width: 370px;
+                    @include flex-mixin(row, space-between, center);
+                }
+                // text content of duedate and time
+                .action-btn-container .text-content {
+                    font-size: fontSize(small, s12);
+                    white-space: nowrap;
+                    .overdue {
+                        color: $red-shade-1;
+                    }
+                }
+                .action-btn-container .text-content span {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

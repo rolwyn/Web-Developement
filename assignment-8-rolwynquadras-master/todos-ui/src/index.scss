@@ -1,0 +1,20 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+// common body styles
+body {
+    padding: 0;
+    margin: 0;  
+    height: 100%;
+    // background: #ffffff;
+    background: #ff8686;
+}
+
+// remove default ul style
+ul {list-style: none;}
+
+// remove default fieldset style
+fieldset {margin: 0; border: none;}

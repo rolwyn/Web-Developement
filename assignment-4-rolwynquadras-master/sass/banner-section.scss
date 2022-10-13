@@ -1,0 +1,167 @@
+// Use math operations
+@use "sass:math";
+
+/* BANNER/FEATURE SECTION STYLES 
+ * This sections contains styles for the main banner/ feature image
+ * along with a search filter for buying, selling, or renting apartments
+ * by choosing city, apartment type and price range.
+ */
+
+
+.banner_container {
+    position: relative;
+    margin-top: 130px;
+}
+
+.banner_wrapper {
+    @include flex-mixin(column, unset, unset);
+    .banner_header {
+        width: 475px;
+        padding: 25px 0;
+        padding-left: 90px;
+        background: $color-white-shade-1;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        box-shadow: -175px 0px 8px 2px $box-sdw-banner;
+        h1 {
+            margin: 0;
+            @include custom-fs(60px); //custom font size mixin
+            color: $md-blue-h1;
+            font-family: serif;
+            margin-bottom: 25px;
+        }
+        h1 span {
+            color: $md-blue-text;
+        }
+        p {
+            margin: 0;
+            font-size: fontSize(small, s13);
+            color: $md-default-text-shade;
+        }
+    }
+    .banner_image img {
+        top: -50px;
+        z-index: -1;
+        left: 360px;
+        width: 1120px;
+        height: 560px;
+        position: absolute;
+        border-radius: 30px;
+    }
+
+    // ------ Apartment Filter styles ----- //
+    .apartment_filter {
+        margin: 25px 0;
+        padding-left: 60px;
+        margin: 25px;
+        .apt_type_toggle {
+            margin-bottom: 10px;
+            // Apartment Filter Button styles
+            button {
+                @extend %default-btn-style;
+                border: none;
+                outline: none;
+                font-size: fontSize(small, s14);
+                background: none;
+                font-weight: 600;
+                color: $md-default-text-shade;
+                border-radius: 50px;
+                border: 1px solid $transparent-shade;
+                &:first-child {
+                    color: $color-white-shade-1;
+                    border-color: $md-btn-primary-blue;
+                    background-color: $md-btn-primary-blue;
+                }
+                &:hover {
+                    color: $color-white-shade-1;
+                    border-color: $md-btn-primary-blue;
+                    background-color: $md-btn-primary-blue;
+                }
+            }
+        }
+        //Search filter form - Input fieldset styles
+        .apt_fieldset_wrapper {
+            max-width: 1140px;
+            border-radius: 5px;
+            background: $color-white-shade-1;
+            box-shadow: 0px 0 2px $box-sdw-fielset;
+            fieldset {
+                border: none;
+                padding: 15px 20px;
+                @include flex-mixin(row, space-between, center);
+                //container for three input boxes */
+                .apt_filter_container {
+                    width: 80%;
+                    @include flex-mixin(row, space-between, center);
+                }
+                //Advanced filter and submit
+                .advance_filter {
+                    display: block;
+                    font-size: fontSize(small, s12);
+                    color: $md-blue-text;
+                    white-space: nowrap;
+                    text-decoration: none;
+                    //Advanced filter on hover
+                    &:hover {
+                        color: $md-btn-primary-hover;
+                    }
+                }
+                .apt_filter_submit {
+                    width: 20%;
+                    @include flex-mixin(row, unset, center);
+                    button {
+                        @extend %default-btn-style;
+                        font-size: fontSize(small, s13);
+                        margin-left: 25px;
+                        padding: 8px 35px;
+                    }
+                }
+            }
+            //filter input  and select box styles
+            .apt_filter_inputs {
+                @for $i from 2 through 3 {
+                    &:nth-child(#{$i}) {
+                        // perform math operation and round it to two digits, give dividend and percent value
+                        max-width: calcWidth(100%, 3);
+                        width: calcWidth(100%, 3);
+                    }
+                }
+                //Filter inputs placeholder styled blue shade
+                input {
+                    &::placeholder {
+                        color: $md-placeholder-blue;
+                        font-weight: 600;
+                    }
+                }
+                //Select box style for dropdowns
+                select {
+                    border: none;
+                    outline: none;
+                    font-size: fontSize(medium, m18);
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: $md-placeholder-blue;
+                    padding: 5px 0px;
+                    option {
+                        color: $md-default-text-shade;
+                    }
+                }
+                input[type=text] {
+                    border: none;
+                    outline: none;
+                    font-size: fontSize(medium, m18);;
+                    padding: 5px 0px;
+                    color: $md-blue-text;
+                }
+                //labels inside filter box
+                label {
+                    display: block;
+                    font-size: fontSize(small, s12);
+                    font-weight: 500;
+                    color: $label-txt-grey;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+/* NAVIGATION BAR/HEADER STYLES
+* Imported in main.css file
+*/
+
+//header wrapper
+.main_header {
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 75px;
+    position: fixed;
+    background: $color-white-shade-1;
+    @include flex-mixin(row, unset, center); //flex-mixin(flex-direction, justify-content, align-items);
+  
+    //brand logo image
+    .brand_logo {
+        width: 30%;
+        a {
+            padding: 15px;
+            display: block;
+            padding-left: 50px;
+        }
+        a > img {
+            width: 180px;
+            height: 50px;
+        }
+    }
+
+    //Nav container
+    .navbar_container {
+        width: 70%;
+        @include flex-mixin(row, space-between, center);
+        width: -webkit-fill-available;
+
+        //Navbar menu items style
+        .nav_list {
+            list-style: none;
+            @include flex-mixin(row, space-between, unset);
+        }
+        .nav_list > li {
+            padding: 10px 20px;
+            a {
+                font-weight: 500;
+                font-size: fontSize(medium, m15);
+                color: $md-default-text-shade;
+                text-decoration: none;
+                &:hover {
+                    color: $md-anchor-blue;
+                }
+                //selects the attribute title with value starting with Home
+                &[title^="Home"]{
+                    font-weight: 500;
+                    color: $md-anchor-blue;
+                }
+            }
+
+        }
+
+        //Navbar right search bar/Notification/login
+        .navbar_action_wrapper {
+            padding: 5px 15px;
+            padding-right: 50px;
+            @include flex-mixin(row, flex-end, center);
+
+            .saved_search_box {
+                position: relative;
+            }
+
+            button {
+                @extend %default-btn-style;
+            }
+
+            //navbar right search box input
+            .saved_search_box input[type=text] {
+                width: 85px;
+                outline: none;
+                height: 25px;
+                font-size: 12px;
+                padding: 0;
+                padding: 0 10px;
+                border-radius: 10px;
+                padding-left: 25px;
+                vertical-align: middle;
+                box-sizing: content-box;
+                border: 1px dashed $input-border-grey;
+                &::placeholder {
+                    color: $md-default-text-shade;
+                    font-weight: 500;
+                }
+            }
+
+            //Search icon style
+            .saved_search_box i {
+                top: 7px;
+                font-weight: 600;
+                left: 9px;
+                font-size: 14px;
+                color: $md-default-text-shade;
+                position: absolute;
+            }
+        }
+        
+        //navbar right notification symbol
+        .notification_icon {
+            padding: 0 15px;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}

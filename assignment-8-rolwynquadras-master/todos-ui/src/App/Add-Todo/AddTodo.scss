@@ -1,0 +1,114 @@
+@import '../Design-Assets/variables';
+@import '../Design-Assets/mixins';
+@import '../Design-Assets/functions';
+
+// Add todo item container which holds the input elements
+.add-todo-item {
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background: $color-white-shade-1;
+    transition: opacity 200ms ease-in-out;
+    transition: height 200ms ease-in-out;
+    box-shadow: 0 0 5px 0px $blue-shade-3;
+    border-radius: 10px;
+    // Fieldset for add todo input fields
+    fieldset {
+        label {
+            color: $color-grey-shade-4;
+            font-size: fontSize(small, s13);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        // input field common style
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            border-bottom: 1px solid $color-grey-shade-3;
+        }
+        // border style for description textarea
+        textarea {
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            border-bottom: 1px solid $color-grey-shade-3;
+        }
+        // style for when label and input are in a single row
+        &.row-fieldset {
+            label:first-child {
+                padding-right: 30px;
+            }
+            input {
+                margin-left: 10px;
+                padding: 5px 10px;
+            }
+        }
+    }
+    // add button for todo
+    .btn-wrapper {
+        padding: 10px;
+        text-align: right;
+        button {
+            @extend %default-btn-style;
+            color: $color-white-shade-1;
+            background-color: $blue-shade-1 ;
+            border-color: $blue-shade-1 ;
+            vertical-align: middle;
+            &:hover {
+                background: $blue-shade-2;
+            }
+        }
+    }
+    // title for add todo view container
+
+    .add-todo-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2 {
+            padding: 0 5px;
+            color: $color-grey-shade-4;
+            font-size: fontSize(large, l24);
+            letter-spacing: 0.3px;
+        }
+        .close-btn {
+            width: 25px;
+            height: 25px;
+            font-size: fontSize(small, s15);
+            text-align: center;
+            border: none;
+            border-radius: 35px;
+            font-weight: bold;
+            color: #455a64;
+            cursor: pointer;
+            margin-right: 10px;
+            font-family: monospace;
+            background: $color-grey-shade-2;
+            vertical-align: middle;
+            color: $color-white-shade-1;
+        }
+    }
+    // add todo form layout
+    .add-todo-form {
+        @include flex-mixin(column, unset, unset);
+        fieldset {
+            @include flex-mixin(column, unset, unset);
+        }
+        .d-flex-row {
+            @include flex-mixin(row, unset, unset);
+        }
+        .d-flex-row label {
+            padding-right: 15px;
+        }
+    }
+    // show description when li element is clicked
+    &._shown {
+        opacity: 1;
+        height: auto;
+        transition: opacity 200ms ease-in-out;
+    }
+}

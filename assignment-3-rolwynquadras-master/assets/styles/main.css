@@ -1,0 +1,677 @@
+/**
+ * CONTENTS
+ *
+ * main.css..............Main css file included in index.html file 
+ *
+ * header.css............Header css file which contains brand-image,
+ *                       navbar styles, searchbox, notification dropdown and login button.
+ *
+ * footer.css............Styles for footer content, including brand-image,
+ *                       social icons, site links.
+ *
+ * common.css............Contains all site wide common styles including body, html styles
+ *                       along with common css selectors for repeating css styles.
+ */
+
+
+@import "common.css";
+@import "header.css";
+@import "footer.css";
+
+/*----- Main content starts here -----*/
+
+/* BANNER/FEATURE SECTION STYLES 
+ * This sections contains styles for the main banner/ feature image
+ * along with a search filter for buying, selling, or renting apartments
+ * by choosing city, apartment type and price range.
+ */
+
+.banner_container {
+    position: relative;
+}
+
+.banner_container .banner_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Banner header style */
+.banner_container .banner_wrapper .banner_header {
+    width: 475px;
+    padding: 25px 0;
+    padding-left: 90px;
+    background: #ffffff;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: -175px 0px 8px 2px #e0e0e0;
+}
+
+.banner_container .banner_wrapper .banner_header h1 {
+    margin: 0;
+    font-size: 60px;
+    color: #186aa5;
+    font-family: serif;
+    margin-bottom: 25px;
+}
+
+.banner_container .banner_wrapper .banner_header h1 span {
+    color: #2196f3;
+}
+
+.banner_container .banner_wrapper .banner_header p {
+    margin: 0;
+    font-size: 13px;
+    color: #37474f;
+}
+
+/* Banner Image style */
+.banner_container .banner_wrapper .banner_image img {
+    top: -50px;
+    z-index: -1;
+    left: 360px;
+    width: 1120px;
+    height: 560px;
+    position: absolute;
+    border-radius: 30px;
+}
+
+/* ------ Apartment Filter styles ----- */
+
+/* Apartment Filter Button styles */
+.apartment_filter {
+    margin: 25px 0;
+    padding-left: 60px;
+    margin: 25px;
+}
+
+.apartment_filter .apt_type_toggle {
+    margin-bottom: 10px;
+}
+
+.apartment_filter .apt_type_toggle button {
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 50px;
+    color: #37474f;
+    border: 1px solid #00000000;
+}
+
+.apartment_filter .apt_type_toggle button:first-child {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #007bff;
+}
+
+.apartment_filter .apt_type_toggle button:hover {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #007bff;
+    
+}
+
+/* Search filter form - Input fieldset styles*/
+.apartment_filter .apt_fieldset_wrapper {
+    max-width: 1140px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0px 0 2px #bdbdbd;
+}
+
+.apartment_filter .apt_fieldset_wrapper fieldset {
+    display: flex;
+    border: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 20px;
+    justify-content: space-between;
+}
+
+/* container for three input boxes */
+.apartment_filter .apt_fieldset_wrapper fieldset .apt_filter_container {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* filter input  and select box styles */
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs:nth-child(2),  .apartment_filter .apt_fieldset_wrapper .apt_filter_inputs:last-child {
+    max-width: 33.33%;
+    width: 33.33%;
+}
+
+/* Filter inputs placeholder styled blue shade */
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs input::placeholder,
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs select {
+    color: #498ab8;
+    font-weight: 600;
+}
+
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs select option {
+    color: #37474f;
+}
+
+
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs input[type=text] {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 5px 0px;
+    color: #2196f3;
+}
+
+/* Select box style for dropdowns */
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs select {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 5px 0px;
+}
+
+/* labels inside filter box */
+.apartment_filter .apt_fieldset_wrapper .apt_filter_inputs label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9e9e9e;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Advanced filter and submit */
+.apartment_filter .apt_fieldset_wrapper fieldset .advance_filter {
+    display: block;
+    font-size: 12px;
+    color: #2196f3;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* Advanced filter on hover */
+.apartment_filter .apt_fieldset_wrapper fieldset .advance_filter:hover {
+    color: #1565c0;
+}
+
+.apartment_filter .apt_fieldset_wrapper fieldset .apt_filter_submit {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.apartment_filter .apt_fieldset_wrapper fieldset .apt_filter_submit button {
+    margin-left: 25px;
+    font-size: 13px;
+    padding: 8px 35px;
+}
+
+/*----- Apartment selection based on the type of apartment styles -----*/
+
+/* Apartment selection section header */
+
+/* The section header h1, h2 and relevant style along with subtitle style
+ * can be found under common.css file */
+
+/* Highlight Dream Apartment text */
+.select_apt_wrapper .section_header h2 span {
+    color: #186aa5;
+}
+
+.select_apt_wrapper .section_header .sub_title {
+    color: #9e9e9e;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Apartment list selection panel card styles */
+
+.panel_wrapper {
+    padding: 40px 0;
+}
+
+.select_apt_wrapper .panel_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select_apt_wrapper .panel_wrapper figure {
+    margin: 0;
+    max-width: 20%;
+    padding: 20px;
+    cursor: pointer;
+    padding-bottom: 0;
+    position: relative;
+    text-align: center;
+    height: max-content;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px #f0f0f0;
+}
+
+/* Apartment card image styles */
+.select_apt_wrapper .panel_wrapper figure img {
+    width: 250px;
+    height: 180px;
+    object-fit: fill;
+}
+
+/* Apartment list image - figure caption style */
+.select_apt_wrapper .panel_wrapper figure figcaption {
+    margin: 10px;
+    font-size: 13px;
+    margin-top: 8px;
+    font-weight: 500;
+    color: #9e9e9e;
+}
+
+.select_apt_wrapper .panel_wrapper figure i {
+    right: 15px;
+    bottom: 10px;
+    font-size: 24px;
+    color: #fe7847;
+    position: absolute;
+}
+
+/* Hide radio for now */
+.select_apt_wrapper .panel_wrapper figure input {
+    display: none;
+}
+
+/* Submit apartment type btn style */
+.select_apt_wrapper .submit_apt_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.select_apt_wrapper .submit_apt_btn button {
+    width: 280px;
+    font-size: 14px;
+    padding: 12px 0;
+    border-radius: 10px;
+    background: #186aa5;
+}
+
+.select_apt_wrapper .submit_apt_btn button:hover {
+    background: #0d4166;
+}
+
+/* FEATURED APARTMENT CAROUSEL
+ * Contains panel cards for displaying the most featured apartments.
+ * Three cards per slide
+ */
+
+/* Featured apartment content body */
+.featured_apt_wrapper .section_content {
+    display: flex;
+    padding: 40px 0;
+    justify-content: space-between;
+}
+
+/* Card wrapper layout */
+.featured_apt_wrapper .apartment_card {
+    margin: 0;
+    max-width: 25%;
+    padding: 20px;
+    text-align: center;
+    height: max-content;
+    border-radius: 20px;
+    box-sizing: content-box;
+    box-shadow: 0 0 10px 2px #f0f0f0;
+}
+
+/* Card image style */
+.featured_apt_wrapper .apartment_card .card_figure {
+    position: relative;
+} 
+
+/* distance - will come on top of the card image. 
+ * It is a floating info on the left side of image */
+.featured_apt_wrapper .apartment_card .card_figure .__selltype span:first-child {
+    left: 10px;
+    top: 10px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    color: #ffffff;
+    background: #8a8b8b;
+    border-radius: 10px;
+}
+
+/* selling type - will come on top of the card image. 
+ * It is a floating info on the right side of image */
+.featured_apt_wrapper .apartment_card .card_figure .__selltype span:last-child {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    font-size: 9px;
+    font-weight: 500;
+    background: #78c720;
+    color: #ffffff;
+    padding: 6px 15px;
+    border-radius: 2px;
+}
+
+/* The figure element of the card */
+.featured_apt_wrapper .apartment_card .card_figure .card_image {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+/* figure caption of the card */
+.featured_apt_wrapper .apartment_card .card_figure figcaption {
+    margin: 5px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #929292;
+    text-align: left;
+}
+
+.featured_apt_wrapper .apartment_card .card_figure figcaption i {
+    color: #fe7847;
+    font-size: 14px;
+}
+
+/* Apartment card description style with price, 
+ * apartment name, desc, size details 
+ */
+ 
+/* Apartment price info */
+.featured_apt_wrapper .apartment_card .card_description .apartment_price {
+    color: #2264e8;
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+/* Apartment name info */
+.featured_apt_wrapper .apartment_card .card_description > h4 {
+    color: #000000;
+    margin: 8px 0;
+}
+
+/* Apartment description */
+.featured_apt_wrapper .apartment_card .card_description > p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #929292;
+}
+
+/* Apartment room dimensions details */
+.featured_apt_wrapper .apartment_card .card_description .__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* container room size, beds and bath number details */
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_size_wrapper {
+    width: 55%;
+    display: flex;
+    font-size: 11px;
+    flex-direction: row;
+    padding: 10px;
+    background: #f4f7fa;
+    justify-content: space-between;
+}
+
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_size_wrapper span {
+    color: #929292;
+    font-weight: 500;
+}
+
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_size_wrapper div {
+    margin-right: 5px;
+}
+
+/* number of beds or bath or size */
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_size_wrapper .__text {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* number of beds or bath or size symbol color*/
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_size_wrapper .__text i {
+    color: #606060;
+}
+
+/* apartment card action button - expand/add/like */
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_action_wrapper {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_action_wrapper div {
+    margin-right: 10px;
+}
+
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_action_wrapper > a {
+    padding: 3px 7px;
+    color: #3f3f3f;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* make second child (heart icon orange shade in color) */
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_action_wrapper > a:nth-child(2) {
+    background: #e86e40;
+    color: white;
+}
+
+.featured_apt_wrapper .apartment_card .card_description .__inner .room_action_wrapper > a > i {
+    font-size: 14px;
+}
+
+
+/* APARTMENT PLANS SECTION STYLES (Studio, Deluxe Portion, Penthouse, Top Garden, Double Height)
+ * This sections contains styles for the different apartment plans
+ * with details of size of apartment in sq.ft and a floor plan.
+ */
+
+/* Apartment plan container */
+.apt_plan_container {
+    background: #f4f7fa;
+    padding: 50px 0;
+}
+
+.apt_plan_wrapper .section_header {
+    padding-bottom: 25px;
+}
+
+ /* Apartment plan list*/
+ .apt_plan_wrapper .plan_list {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 760px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.apt_plan_wrapper .plan_list > li a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #37474f;
+    text-decoration: none;
+}
+
+/* Apartment list anchor hover style */
+.apt_plan_wrapper .plan_list > li a:hover {
+    color: #2b8dfe;
+    text-decoration: underline;
+}
+
+/* active class after plan selected */
+.apt_plan_wrapper .plan_list > li a._active {
+    color: #2b8dfe;
+    text-decoration: underline;
+}
+
+/* Apartment plans section content */
+.apt_plan_wrapper .section_content {
+    display: flex;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px 0px #cecece;
+}
+
+/* Plan description on the left side of the wrapper */
+.apt_plan_wrapper .section_content .plan_description {
+    padding: 47px;
+    max-width: 35%;
+    border-radius: 10px;
+    background: #186aa5;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.apt_plan_wrapper .section_content .plan_description > h3 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.apt_plan_wrapper .section_content .plan_description > p {
+    color: #efefef;
+    font-size: 13px;
+    line-height: 2.2;
+}
+
+/* floor dimensions text */
+.apt_plan_wrapper .section_content .plan_description .text_desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.apt_plan_wrapper .section_content .plan_description .text_desc .text_desc_inner {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    justify-content: space-between;
+}
+
+.apt_plan_wrapper .section_content .plan_description .text_desc .text_desc_inner span {
+    white-space: nowrap;
+}
+
+.apt_plan_wrapper .section_content .plan_description .text_desc .text_desc_inner .h_dashed_line {
+    border: 0px;
+    height: 0;
+    padding: 0;
+    height: 1px;
+    display: block;
+    margin: 0 20px;
+    border-spacing: 1px;
+    border-collapse: collapse;
+    border-top: 1px dotted #ffffff;
+    width: -webkit-fill-available;
+}
+
+/* Floor plan on the right side of wrapper */
+.apt_plan_wrapper .section_content .floor_plan_img {
+    padding: 60px;
+}
+
+/* set image width of floor plan */
+.apt_plan_wrapper .section_content img {
+    width: 460px;
+}
+
+
+/* BUYING A DREAM APARTMENT ARTICLE SECTION - Includes images and a
+ * button to see all apartments.
+ * This section is located above the footer element
+ */
+
+ /* Set the postion relative so that images can be absolute to this element */
+ .dream_apt_container {
+    position: relative;
+ }
+
+
+.dream_apt_wrapper {
+    padding: 200px 0;
+}
+
+    /* .dream_apt_wrapper .dream_apt_header {
+        padding-top: 100px;
+    } */
+
+ .dream_apt_wrapper .dream_apt_header h2 {
+     line-height: 2;
+    font-size: 35px;
+    color: #37474f;
+    padding-bottom: 0;
+ }
+
+ /* Highlight the "Prime Location" text with blue shade */
+ .dream_apt_wrapper .dream_apt_header h2 span {
+    color: #2289ff;
+ }
+
+ /* Buy dream apartment text section header */
+ .dream_apt_wrapper .dream_apt_header button {
+    width: 230px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 20px 0;
+    border-radius: 10px;
+    background: #186aa5;
+ }
+
+ .dream_apt_wrapper .dream_apt_header button:hover {
+    background: #0d4166;
+ }
+
+ /* Dream apartment dotted images style */
+ .dream_apt_wrapper .dream_apt_images img:first-child {
+    position: absolute;
+    top: 46px;
+    right: 48%;
+    height: 270px;
+    width: 290px;
+ }
+
+ /* main image - hero img style */
+ .dream_apt_wrapper .dream_apt_images img:last-child {
+    position: absolute;
+    right: 25px;
+    bottom: -52px;
+    width: 960px;
+    height: 730px;
+ }
+
+ /* Dream apartment video */
+.dream_apt_wrapper .dream_apt_video {
+    position: absolute;
+    left: 30%;
+    bottom: 8%;
+}
+
+.dream_apt_wrapper .dream_apt_video img {
+    width: 350px;
+    height: auto;
+}
+
+/* Video icon */
+.dream_apt_wrapper .dream_apt_video i {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    font-size: 75px;
+    color: #2289ff;
+}

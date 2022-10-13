@@ -1,0 +1,118 @@
+/* NAVIGATION BAR/HEADER STYLES
+* Imported in main.css file
+*/
+
+/* header wrapper */
+.main_header {
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    flex-direction: row;
+}
+
+/* Brand logo image */
+.main_header .brand_logo {
+    width: 30%;
+}
+
+.main_header .brand_logo a {
+    padding: 15px;
+    padding-left: 50px;
+    display: block;
+}
+
+.main_header .brand_logo a > img {
+    width: 180px;
+    height: 50px;
+}
+
+/* Nav container */
+.main_header .navbar_container {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+
+/* Navbar menu items style */
+.main_header .navbar_container .nav_list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.main_header .navbar_container .navbar_wrapper .nav_list > li {
+    padding: 10px 20px;
+}
+
+.main_header .navbar_container .navbar_wrapper .nav_list > li a {
+    font-weight: 500;
+    font-size: 15px;
+    color: #37474f;
+    text-decoration: none;
+}
+
+/* Hover style for navbar menu */
+.main_header .navbar_container .navbar_wrapper .nav_list > li a:hover {
+    color: #03a9f4;
+}
+
+/* selects the attribute title with value starting with Home */
+.main_header .navbar_container .nav_list > li a[title^="Home"]{
+    font-weight: 500;
+    color: #03a9f4;
+}
+
+/* Navbar right search bar/Notification/login */
+.main_header .navbar_container .navbar_action_wrapper {
+    display: flex;
+    padding: 5px 15px;
+    padding-right: 50px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.main_header .navbar_container .navbar_action_wrapper .saved_search_box {
+    position: relative;
+}
+
+/* navbar right search box input */
+.main_header .navbar_container .navbar_action_wrapper .saved_search_box input[type=text] {
+    width: 85px;
+    outline: none;
+    height: 25px;
+    font-size: 12px;
+    padding: 0;
+    padding: 0 10px;
+    border-radius: 10px;
+    padding-left: 25px;
+    vertical-align: middle;
+    box-sizing: content-box;
+    border: 1px dashed #757575;
+}
+
+.main_header .navbar_container .navbar_action_wrapper .saved_search_box input[type=text]::placeholder {
+    color: #37474f;
+    font-weight: 500;
+}
+
+/* Search icon style */
+.main_header .navbar_container .navbar_action_wrapper .saved_search_box i {
+    top: 7px;
+    font-weight: 600;
+    left: 9px;
+    font-size: 14px;
+    color: #37474f;
+    position: absolute;
+}
+
+.main_header .navbar_container .navbar_action_wrapper .notification_icon {
+    padding: 0 15px;
+}
+
+/* navbar right notification symbol */
+.main_header .navbar_container .navbar_action_wrapper .notification_icon img {
+    width: 40px;
+    height: 40px;
+}

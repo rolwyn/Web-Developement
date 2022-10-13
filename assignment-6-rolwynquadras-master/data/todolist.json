@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Do Java",
+        "description": "This week for assignment we have to build a university object model",
+        "duedate": "2021-11-06",
+        "time": "1:30",
+        "creationDate": "2021-11-03"
+    },
+    {
+        "title": "Do Javascript",
+        "description": "",
+        "duedate": "2021-11-04",
+        "time": "2:30",
+        "creationDate": "2021-11-04"
+    },
+    {
+        "title": "Have lunch with friends",
+        "description": "Go out for lunch with Adam and Quincy",
+        "duedate": "2021-11-07",
+        "time": "3:30",
+        "creationDate": "2021-11-05"
+    },
+    {
+        "title": "Learn react today",
+        "description": "Finish the react development course today",
+        "duedate": "2021-11-08",
+        "time": "3:30",
+        "creationDate": "2021-11-06"
+    }
+]

@@ -1,0 +1,354 @@
+<!-- 
+    Assignment 2
+    This is a webpage made only using HTML.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Modern Web Page</title>
+        <meta charset="utf-8">
+        <!-- Viewport element for setting the width of content to the width of device-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/styles/main.css">
+    </head>
+    <body>
+        <div>
+           <header>
+               <!-- Main navigation bar for the web page -->
+               <div>
+                   <a href="./index.html"><img src="./assets/images/company_logo.png" alt="company_logo"></a>
+               </div>
+               <nav>
+                   <div>
+                       <!-- Navigation Menu items list -->
+                       <ul>
+                           <li><a href="index.html" title="Home page">Home</a></li>
+                           <li><a href="about" title="about-us">About</a></li>
+                           <li><a href="featured" title="featured">Featured</a></li>
+                           <li><a href="contact" title="contact">Contact</a></li>
+                       </ul>
+                   </div>
+                   <div>
+                       <!-- Search saved apartment form along with notifications tab and login button-->
+                       <form action="./index.html" method="POST">
+                            <img src="./assets/images/searchicon.png" alt="search-icon" width="25px">
+                           <input type="text" placeholder="Saved Search" minlength="3" maxlength="25">
+                        </form>
+                        <div>
+                            <a href="javascript:;"><img src="./assets/images/notificationbell.png" alt="notification"></a>
+                        </div>
+                        <div>
+                            <button type="button">LOGIN</button>
+                        </div>
+                   </div>
+               </nav>
+           </header>
+           <!-- Feature image along with search filter for buying, selling or renting an apartment -->
+           <section>
+                <div>
+                    <div>
+                        <h1>Let's find <br>yours Dream..</h1>
+                        <p><strong>Building award winning properties across <br>London UK and the All world</strong></p>
+                    </div>
+                    <form action="./index.html" method="GET">
+                        <!-- Form Actions - Buy/Sell/Rent -->
+                        <div>
+                            <button type="button">Buy</button>
+                            <button type="button">Sell</button>
+                            <button type="button">Rent</button>
+                        </div>
+                        <!-- Apartment search filter -->
+                        <div>
+                            <fieldset>
+                                <!-- City Name -->
+                                <div>
+                                    <label>City/Street</label>
+                                    <input type="text" name="cityname" placeholder="Enter City" required>
+                                </div>
+                                <!-- Apartment type selection -->
+                                <div>     
+                                    <label for="apartmentType">Apartment Type</label>
+                                    <select name="apartmenttype" id="apartmentType" required>
+                                        <option value="">--Please choose an option--</option>
+                                        <option selected value="Deluxe">Deluxe Portion</option>
+                                        <option value="Penthouse">Penthouse</option>
+                                    </select>
+                                </div>
+                                <!-- Price range selection -->
+                                <div>     
+                                    <label for="pricerange">Price Range</label>
+                                    <select name="pricerange" id="pricerange" required>
+                                        <option selected value="">Min price-Max price</option>
+                                        <option value="500-1000">500-1000 $</option>
+                                        <option value="1000-2000">1000-2000 $</option>
+                                    </select>
+                                </div>
+                                <a href="javascript:;">+ Advance Filter</a>
+                                <button type="submit">Search</button>
+                            </fieldset>
+                        </div>
+                    </form>
+                    <!-- Feature Image/ Banner -->
+                    <img src="./assets/images/banner-img.png" alt="dream-apartment" width="800" height="500">
+                </div>
+           </section>
+           <!-- Apartment selection based on the type of apartment - Delux/Double-Height/Penthouse/Studio etc. -->
+           <section>
+                <header>
+                    <h2>Hi, What do you want to your <br>Dream Apartment</h2>
+                    <p>Select a Apartment type below to begin</p>
+                </header>
+                <form action="index.html" method="POST">
+                    <figure>
+                        <img src="./assets/images/deluxportion.png" alt="delux-portion" width="300" height="200">
+                        <figcaption>Deluxe Portion</figcaption>
+                        <input type="radio" id="deluxApt" name="aptType" value="Delux-Portion" required>
+                    </figure>
+                    <figure>
+                        <img src="./assets/images/delux2.png" alt="double-height" width="300" height="200">
+                        <figcaption>Double Height</figcaption>
+                        <input type="radio" id="doubleHeightApt" name="aptType" value="Double-Height" required>
+                    </figure>
+                    <figure>
+                        <img src="./assets/images/penthouse.png" alt="penthouse" width="300" height="200">
+                        <figcaption>Penthouse</figcaption>
+                        <input type="radio" id="pentHouseApt" name="aptType" value="Penthouse" required>
+                    </figure>
+                    <figure>
+                        <img src="./assets/images/studio.png" alt="studio" width="300" height="200">
+                        <figcaption>The Studio<figcaption>
+                        <input type="radio" id="studioApt" name="aptType" value="Studio" required>
+                    </figure>
+                    <button type="submit">Continue</button>
+                </form>
+           </section>
+           <!-- Featured Apartment Carousel - Most frequently searched and popular apartment list -->
+           <section>
+               <article>
+                   <header>
+                       <h2>Featured Apartment</h2>
+                       <p>The Most frequently searched and most popular apartment of the application will be in the list</p>
+                   </header>
+                   <div>
+                       <!-- Apartment list panel card -->
+                       <div id="panel-1">
+                            <figure>
+                                <div>
+                                    <span>1.2 km away</span>
+                                    <span>FOR RENT</span>
+                                </div>
+                                <img src="./assets/images/FeaturedApt1.png" alt="featured-apartment-1" width="300" height="200">
+                                <figcaption><img src="./assets/images/locationpin.png" alt="location-pin"> Knightsbridge</figcaption>
+                            </figure>
+                            <!-- Apartment price with description -->
+                            <div>
+                                <div style="color:#2264e8"><strong>$2500</strong></div>
+                                <h4>Apartment London</h4>
+                                <p>Beautiful huge 1 family house in heart of Westbury newly renovated with new furniture</p>
+                                <!-- Number of bed/bath and size details -->
+                                <div>
+                                    <div>
+                                        <div>
+                                            2 <img src="./assets/images/bed-1.png" alt="bed"><br>
+                                            <span>Bedrooms</span>
+                                        </div>
+                                        <div>
+                                            2 <img src="./assets/images/bathtub-1.png" alt="bathtub"><br>
+                                            <span>Bathrooms</span>
+                                        </div>
+                                        <div>
+                                            1776 <img src="./assets/images/sqfeet.png" alt="square-ft-info" width="15px" height="15px"><br>
+                                            <span>Square Ft</span>
+                                        </div>
+                                        <div>
+                                            <a href="javascript:;" title="Expand"><img src="./assets/images/expand.png" alt="expand button"></a>
+                                            <a href="javascript:;" title="Favourite"><img src="./assets/images/like.png" alt="like button"></a>
+                                            <a href="javascript:;"title="Add"><img src="./assets/images/add.png" alt="add button"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <!-- Apartment list panel card -->
+                        <div id="panel-2">
+                            <figure>
+                                <div>
+                                    <span>20 km away</span>
+                                    <span>FOR SELL</span>
+                                </div>
+                                <img src="./assets/images/FeaturedApt2.png" alt="featured-apartment-2" width="300" height="200">
+                                <figcaption><img src="./assets/images/locationpin.png" alt="location-pin"> Belmont Gardens, Chicago</figcaption>
+                            </figure>
+                            <!-- Apartment price with description -->
+                            <div>
+                                <div style="color:#2264e8"><strong>$30000</strong></div>
+                                <h4>Studio Apartment</h4>
+                                <p>Beautiful huge 1 family house in heart of Westbury newly renovated with new furniture</p>
+                                <!-- Number of bed/bath and size details -->
+                                <div>
+                                    <div>
+                                        <div>
+                                            3 <img src="./assets/images/bed-1.png" alt="bed"><br>
+                                            <span>Bedrooms</span>
+                                        </div>
+                                        <div>
+                                            2 <img src="./assets/images/bathtub-1.png" alt="bathtub"><br>
+                                            <span>Bathrooms</span>
+                                        </div>
+                                        <div>
+                                            2500 <img src="./assets/images/sqfeet.png" alt="square-ft-info" width="15px" height="15px"><br>
+                                            <span>Square Ft</span>
+                                        </div>
+                                        <div>
+                                            <a href="javascript:;" title="Expand"><img src="./assets/images/expand.png" alt="expand button"></a>
+                                            <a href="javascript:;" title="Favourite"><img src="./assets/images/like.png" alt="like button"></a>
+                                            <a href="javascript:;"title="Add"><img src="./assets/images/add.png" alt="add button"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <!-- Apartment list panel card -->
+                        <div id="panel-3">
+                            <figure>
+                                <div>
+                                    <span>5.6 km away</span>
+                                    <span>FOR RENT</span>
+                                </div>
+                                <img src="./assets/images/FeaturedApt3.png" alt="featured-apartment-1" width="300" height="200">
+                                <figcaption><img src="./assets/images/locationpin.png" alt="location-pin"> Timber Yard, Birmingham City Center, B5</figcaption>
+                            </figure>
+                            <!-- Apartment price with description -->
+                            <div>
+                                <div style="color:#2264e8"><strong>$379,000</strong></div>
+                                <h4>Galliard Homes Apartment</h4>
+                                <p>This fabulous two bedroom duplex apartment will be close to some of the best local haunts and venues the city has to offer.</p>
+                                <!-- Number of bed/bath and size details  -->
+                                <div>
+                                    <div>
+                                        <div>
+                                            2 <img src="./assets/images/bed-1.png" alt="bed"><br>
+                                            <span>Bedrooms</span>
+                                        </div>
+                                        <div>
+                                            1 <img src="./assets/images/bathtub-1.png" alt="bathtub"><br>
+                                            <span>Bathrooms</span>
+                                        </div>
+                                        <div>
+                                            1041 <img src="./assets/images/sqfeet.png" alt="square-ft-info" width="15px" height="15px"><br>
+                                            <span>Square Ft</span>
+                                        </div>
+                                        <div>
+                                            <a href="javascript:;" title="Expand"><img src="./assets/images/expand.png" alt="expand button"></a>
+                                            <a href="javascript:;" title="Favourite"><img src="./assets/images/like.png" alt="like button"></a>
+                                            <a href="javascript:;"title="Add"><img src="./assets/images/add.png" alt="add button"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                   </div>
+               </article>
+            </section>
+            <!-- Apartment plan list section with apartment overview and dimension information for each item along with a floor plan -->
+            <section>
+                <div>
+                    <header>
+                        <h2>Apartment Plans</h2>
+                    </header>
+                    <!-- List of apartments -->
+                    <ul>
+                        <li><a href="javascript:;">The Studio</a></li>
+                        <li><a href="javascript:;">Delux Portion</a></li>
+                        <li><a href="javascript:;">Penthouse</a></li>
+                        <li><a href="javascript:;">Top Garden</a></li>
+                        <li><a href="javascript:;">Double Height</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- Plan description and dimensions -->
+                    <div>
+                        <h3>Deluxed Portion</h3>
+                        <p>Boosting chic interiors, three private balconies and a remarkable terrace, 
+                            this two bedroom apartment will epitomise complete luxury. Not only will residents
+                            benefit from a superb location in the heart of Shoreditch, but they will also enjoy unrivalled facilities and a  24-hour bespoke concierge.
+                        </p>
+                        <div style="background-color: #186aa5;">
+                            <p>Total Area ---------------------------- 2800 Sq.Ft </p>
+                            <p>Bedroom ---------------------------- 2800 Sq.Ft</p>
+                            <p>Bathroom ---------------------------- 2800 Sq.Ft</p>
+                            <p>Smoking/pets ---------------------------- 2800 Sq.Ft</p>
+                            <p>Lounge ---------------------------- 2800 Sq.Ft</p>
+                        </div>
+                    </div>
+                    <!-- Floor plan image according to plan selected-->
+                    <div>
+                        <img src="./assets/images/floorplan.png" alt="floor-plan">
+                    </div>
+                </div>
+            </section>
+            <!-- Buy dream apartment in prime location article -->
+            <section>
+                <article>
+                    <div>
+                        <h2>Buy <br> Dream Apartment <br> In Prime location</h2>
+                        <button type="button">See All Apartment</button>
+                    </div>
+                    <figure>
+                        <img src="./assets/images/dotted-style.png" alt="dotted-image">
+                        <img src="./assets/images/wintergarden.png" alt="delux-apt">
+                    </figure>
+                    <figure>
+                        <video width="300" height="300" controls preload="auto">
+                            <source src="./assets/images/sampleroom.mp4"
+                                    type="video/mp4">
+                            Sorry, video is not supported by the browser.
+                        </video>
+                    </figure>
+                </article>
+            </section>
+            <!-- Footer content with useful links and social information -->
+            <footer>
+                <div>
+                    <!-- Company info with social information -->
+                    <div>
+                        <img src="./assets/images/company_logo.png" alt="company-logo">
+                        <p>The most beautiful exclusive properties and luxury apartments</p>
+                        <figure>
+                            <a href="https://facebook.com" title="facebook"><img src="./assets/images/fb_social.png" alt="facebook"></a>
+                            <a href="https://twitter.com" title="twitter"><img src="./assets/images/twitter_social.png" alt="twitter"></a>
+                            <a href="https://instagram.com" title="instagram"><img src="./assets/images/instagram_social.png" alt="instagram"></a>
+                            <a href="https://telegram.org" title="telegram"><img src="./assets/images/telegram_social.png" alt="telegram"></a>
+                        </figure>
+                    </div>
+                    <!-- Footer links -->
+                    <div>
+                        <div>
+                            <h4><strong>Useful Links</strong></h4>
+                            <ul>
+                                <li><a href="#" title="about">About</a></li>
+                                <li><a href="#" title="partners">Partners</a></li>
+                                <li><a href="#" title="contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4><strong>Help?</strong></h4>
+                            <ul>
+                                <li><a href="#" title="faq">FAQ</a></li>
+                                <li><a href="#" title="terms&condition">Terms & Condition</a></li>
+                                <li><a href="#" title="policy">Policy</a></li>
+                                <li><a href="#" title="privacy">Privacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright Information -->
+                <div>
+                    &copy; Copyright 2021, <a href="http://modern.com">mordern.com</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <!-- End of body tag -->
+</html>
+<!-- Page end -->

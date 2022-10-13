@@ -1,0 +1,166 @@
+@import '../Design-Assets/variables';
+@import '../Design-Assets/mixins';
+@import '../Design-Assets/functions';
+
+// Mark todo as done
+.linethrough {
+    text-decoration: line-through;
+}
+
+// TODOS styles
+.todo-box {
+    padding: 0 10px;
+    border-radius: 10px;
+    background: $color-white-shade-1;
+    .todo-header {
+        padding: 10px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $color-grey-shade-1;
+        // the todo title element
+        >p {
+            color: $color-grey-shade-4;
+            font-size: fontSize(large, l24);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #5955b9;
+            font-family: cursive;
+        }
+    }
+    // handle overflow and add a scrollbar when list exceeds height
+    .todo-overflow-wrapper {
+        max-height: 400px;
+        overflow: auto;
+        height: 400px;
+    }
+    .list-container {
+        padding: 0;
+        // the todo list element
+        li {
+            padding: 10px;
+            background: $color-white-shade-1;
+            margin: 10px 10px;
+            border: 1px solid #adaaff;
+            height: auto;
+            line-height: 1.5;
+            overflow: hidden;
+            border-radius: 10px;
+            background: $peach-shade-1;
+            // when todo status is complete show green border
+            &._statusComplete {
+                border: 2px solid $green-shade-3;
+            }
+            p {
+                margin: 0;
+                font-size: 1.20rem;
+                pointer-events: all;
+                width: 50%;
+                padding-right: 5px;
+                word-break: break-word;
+                cursor: zoom-in;
+            }
+            /*
+             * list description, hide initially and show when 
+             * _showDesc class is present
+            */
+            .todo-list-desc{
+                opacity: 0;
+                height: 0;
+                padding: 0;
+                &._showDesc {
+                    opacity: 1;
+                    height: auto;
+                    padding: 10px 0;
+                    text-align: justify;
+                    word-break: break-word;
+                    transition: opacity 200ms ease-in-out;
+                }
+            }
+        }
+        li .list-item-inner {
+            @include flex-mixin(row, space-between, unset);
+            pointer-events: none;
+            // mark todo complete button styles
+            .mark-complete {
+                pointer-events: all;
+                color: $color-white-shade-1;
+                background-color: $green-shade-1;
+                border-color: $green-shade-1;
+                vertical-align: middle;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+                font-size: fontSize(small, s12);
+                cursor: pointer;
+                margin: 0 5px;
+                &:hover {
+                    background-color: $green-shade-2;
+                }
+                &._pending {
+                    background-color: $red-shade-1;
+                    border-color: $red-shade-1;
+                    &:hover {
+                        background-color: $red-shade-3;
+                    }
+                }
+            }
+            // delete todo button
+            .delete-todo-btn {
+                width: 25px;
+                height: 25px;
+                font-size: fontSize(small, s15);
+                text-align: center;
+                border: none;
+                border-radius: 35px;
+                font-weight: bold;
+                color: #455a64;
+                cursor: pointer;
+                font-family: monospace;
+                background: #ff6161;
+                vertical-align: middle;
+                color: $color-white-shade-1;
+                pointer-events: all;
+            }
+            // edit todo button
+            .edit-todo-btn {
+                pointer-events: all;
+                padding: 0;
+                border: none;
+                cursor: pointer;
+                margin: 0 5px;
+                img {
+                    pointer-events: all;
+                    width: 22px;
+                    height: 22px;
+                    object-fit: contain;
+                    vertical-align: middle;
+                    color: #ffffff;
+                }
+                &:hover {
+                    box-shadow: 0 0 5px 0px #b8b8b8;
+                }
+            }
+
+            // action elements on the right side of the todo li element
+            .action-btn-container {
+                // width: 450px;
+                min-width: 580px;
+                @include flex-mixin(row, flex-end, center);
+            }
+            // text content of duedate and time
+            .action-btn-container .text-content {
+                font-size: fontSize(small, s12);
+                white-space: nowrap;
+                margin: 0 3px;
+                .overdue {
+                    color: $red-shade-1;
+                }
+            }
+            .action-btn-container .text-content span {
+                font-weight: 600;
+            }
+        }
+    }
+}

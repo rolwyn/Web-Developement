@@ -1,0 +1,108 @@
+/*----- PAGE FOOTER STYLES 
+* Imported in main.css file
+*/
+
+/* footer parent */
+.page_footer {
+    width: 100%;
+    background-color: #14395b;
+}
+
+/* footer wrapper */
+.page_footer_wrapper {
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 260px;
+    max-width: 1340px;
+    flex-direction: row;
+}
+
+.page_footer_wrapper > .footer_links_wrapper div ul {
+    padding: 0 ;
+}
+
+/* Footer left side social info wrapper */
+.page_footer_wrapper .footer_social_wrapper {
+    max-width: 30%;
+    display: flex;
+    text-align: left;
+    margin-right: 50px;
+    flex-direction: column;
+}
+
+.page_footer_wrapper .footer_social_wrapper {
+    margin: 0;
+}
+
+/* Footer company logo */
+.page_footer_wrapper .footer_social_wrapper > img {
+    width: 180px;
+    height: 50px;
+}
+
+.page_footer_wrapper .footer_social_wrapper p {
+    margin: 18px 0;
+    font-size: 13px;
+    text-align: left;
+    color: #dadada;
+}
+
+.page_footer_wrapper .footer_social_wrapper figure {
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* Social image styles */
+.page_footer_wrapper .footer_social_wrapper figure a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.page_footer_wrapper .footer_social_wrapper figure a img {
+    width: 40px;
+}
+
+/* Footer link wrapper */
+.page_footer_wrapper .footer_links_wrapper {
+    width: 70%;
+    display: flex;
+    text-align: left;
+    justify-content: space-evenly;
+}
+
+/* targets the first child div's h4 attr */
+.page_footer_wrapper .footer_links_wrapper div > h4{
+    font-size: 14px;
+    color: #f2f2f2;
+    margin-bottom: 25px;
+}
+
+.page_footer_wrapper .footer_links_wrapper ul > li {
+    margin: 10px 0;
+}
+
+.page_footer_wrapper .footer_links_wrapper ul > li a {
+    font-size: 13px;
+    color: #dadada;
+    text-decoration: none;
+}
+
+/* Copyright container styles */
+.copyright_container {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #0b2f50;
+}
+
+.copyright_container p {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* copyright anchor */
+.copyright_container p a {
+    color: #ffffff;
+    text-decoration: none;
+}

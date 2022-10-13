@@ -1,0 +1,83 @@
+/*----- Apartment selection based on the type of apartment styles -----*/
+
+/* Apartment selection section header */
+
+/* The section header h1, h2 and relevant style along with subtitle style
+ * can be found under _common.scss file */
+
+.panel_wrapper {
+	padding: 40px 0;
+}
+
+.select_apt_wrapper {
+	.section_header {
+		h2 {
+            //Highlight Dream Apartment text
+			span {
+				color: $md-blue-h1;
+			}
+		}
+		.sub_title {
+			color: $label-txt-grey;
+			font-size: fontSize(small, s13);
+			font-weight: 400;
+		}
+	}
+    //Apartment list selection panel card styles
+	.panel_wrapper {
+		@include flex-mixin(row, space-between, center);
+        //Apartment card image styles
+		figure {
+			margin: 0;
+			max-width: 20%;
+			padding: 20px;
+			cursor: pointer;
+			padding-bottom: 0;
+			position: relative;
+			text-align: center;
+			height: max-content;
+			border-radius: 20px;
+			box-shadow: 0 0 10px 2px $color-white-shade-2;
+            //Apartment list image - figure caption style
+			img {
+				width: 250px;
+				height: 180px;
+				object-fit: fill;
+			}
+			figcaption {
+				margin: 10px;
+				font-size: fontSize(small, s13);
+				margin-top: 8px;
+				font-weight: 500;
+				color: $label-txt-grey;
+			}
+			i {
+				right: 15px;
+				bottom: 10px;
+				font-size: fontSize(large, l24); //large font size - refer variables
+				color: $md-icon-red;
+				position: absolute;
+			}
+            /* Hide radio for now */
+			input {
+				display: none;
+			}
+		}
+	}
+    //Submit apartment type btn style
+	.submit_apt_btn {
+		width: 100%;
+		text-align: center;
+		button {
+			@extend %default-btn-style;
+			width: 280px;
+			font-size: fontSize(small, s14);
+			padding: 12px 0;
+			border-radius: 10px;
+			background: $md-blue-h1;
+			&:hover {
+				background: $md-submit-hover;
+			}
+		}
+	}
+}

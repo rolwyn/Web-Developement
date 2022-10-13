@@ -1,0 +1,23 @@
+{
+  "name": "assignment-4-rolwynquadras",
+  "version": "1.0.0",
+  "description": "```Name: Rolwyn Quadras, NUID - 001554737, Email - quadras.r@northeastern.edu```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info6150-fall2021/assignment-4-rolwynquadras.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info6150-fall2021/assignment-4-rolwynquadras/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info6150-fall2021/assignment-4-rolwynquadras#readme",
+  "dependencies": {
+    "sass": "^1.42.1"
+  }
+}

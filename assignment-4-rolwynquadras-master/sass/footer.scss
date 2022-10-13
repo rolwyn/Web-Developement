@@ -1,0 +1,91 @@
+/*----- PAGE FOOTER STYLES 
+* Imported in main.css file
+*/
+
+//footer parent
+.page_footer {
+    width: 100%;
+    background-color: $md-footer-bg;
+}
+
+//footer wrapper
+.page_footer_wrapper {
+    margin: 0 auto;
+    padding: 50px 260px;
+    max-width: 1340px;
+    @include flex-mixin(row, unset, unset);
+    flex-direction: row;
+    >.footer_links_wrapper {
+        div ul {
+            padding: 0 ;
+        }
+    }
+    //Footer left side social info wrapper
+    .footer_social_wrapper {
+        max-width: 30%;
+        text-align: left;
+        margin-right: 50px;
+        margin: 0;
+        @include flex-mixin(column, unset, unset);
+        // Footer company logo
+        > img {
+            width: 180px;
+            height: 50px;
+        }
+        p {
+            margin: 18px 0;
+            font-size: fontSize(small, s13);
+            text-align: left;
+            color: $color-white-shade-5;
+        }
+        figure {
+            margin: 0;
+            padding-top: 20px;
+            //Social image styles
+            a {
+                display: inline-block;
+                margin-right: 5px;
+            }
+            a img {
+                width: 40px;
+            }
+        }
+    }
+        //Footer link wrapper//
+    .footer_links_wrapper {
+        width: 70%;
+        text-align: left;
+        @include flex-mixin(row, space-evenly, unset);
+        /* targets the first child div's h4 attr */
+        div > h4{
+            font-size: fontSize(small, s14);
+            color: $color-white-shade-6;
+            margin-bottom: 25px;
+        }
+        ul > li {
+            margin: 10px 0;
+        }
+        ul > li a {
+            font-size: fontSize(small, s13);
+            color: $color-white-shade-5;
+            text-decoration: none;
+        }     
+    }
+}
+// Copyright container styles
+.copyright_container {
+    width: 100%;
+    padding: 20px 0;
+    background-color: $md-copyright-bg-blue;
+    p {
+        max-width: 1000px;
+        margin: 0 auto;
+        color: $color-white-shade-1;
+        font-size: fontSize(small, s13);
+        // copyright anchor
+        a {
+            color: $color-white-shade-1;
+            text-decoration: none;
+        }
+    }
+}

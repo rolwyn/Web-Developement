@@ -1,0 +1,78 @@
+//----Font Family----//
+$font-family-open-sans: 'Open Sans', sans-serif;
+
+// Font size variables
+$font-size-12: 12px;
+$font-size-14: 14px;
+$font-size-15: 15px;
+
+// Creating an array of font sizes and then making a function in _functions.scss to use them
+$fontSizes: (
+  small: (
+    s9: 9px,
+    s10: 10px,
+    s11: 11px,
+    s12: 12px,
+    s13: 13px,
+    s14: 14px
+  ),
+  medium: (
+    m15: 15px,
+    m16: 16px,
+    m17: 17px,
+    m18: 18px
+  ),
+  large: (
+    l20: 20px,
+    l24: 24px
+  )
+);
+
+
+//---- White Color Shade ----//
+$color-white-shade-1  : #ffffff;
+$color-white-shade-2  : #f0f0f0;
+$color-white-shade-3  : #f4f7fa;
+$color-white-shade-4  : #e0e0e0;
+$color-white-shade-5  : #dadada;
+$color-white-shade-6  : #f2f2f2;
+
+// ---- Black Shade ----//
+$color-black-shade-1  : #000000;
+$color-black-shade-2  : #3f3f3f;
+
+// ----Grey color variations ----//
+$color-grey-shade-1   : #efefef;
+$box-sdw-banner       :  #9c9494;
+$box-sdw-fielset      :  #bdbdbd;
+$label-txt-grey       :  #9e9e9e;
+$input-border-grey    :  #757575;
+$apt-card-p-text      :  #929292;
+$sell-type-grey       :  #8a8b8b;
+$box-sdw-section      :  #cecece;
+
+// Material Blue shade
+$md-blue-h1           : #186aa5;
+$md-blue-text         : #2196f3;
+$md-btn-primary-blue  : #007bff;
+$md-btn-primary-hover : #1565c0;
+$md-placeholder-blue  : #498ab8;
+$md-anchor-blue       : #03a9f4;
+$md-submit-hover      : #0d4166;
+$md-price-tag-blue    : #2264e8;
+$md-copyright-bg-blue : #0b2f50;
+$md-footer-bg         : #14395b;
+$md-icon-shade        : #2289ff;
+$md-plan-list-blue    : #2b8dfe;
+
+// Default text/header color
+$md-default-text-shade: #37474f;
+
+// Transparent Shade
+$transparent-shade    : #00000000;
+
+// Red Shade
+$md-icon-red          : #fe7847;
+
+//Orange Shade
+$color-orange-shade-1 : #e86e40;
